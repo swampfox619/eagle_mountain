@@ -1,0 +1,31 @@
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <%= image_tag('me_facebook_logo', size: '75x75', id: 'logo-header') %>
+      <h3>Eagle<br>Mountain<br>Digital</h3>
+    </div>
+    <ul class="nav-links">
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'About', about_path %></li>
+      <li><%= link_to 'Website Packages', packages_path %></li>
+      <li><%= link_to 'Website Features', features_path %></li>
+      <li><%= link_to 'Blog', blog_path %></li>
+      <li><%= link_to 'Contact', contact_path %></li>
+    </ul>
+  </div>
+  <ul class="header-bottom">
+    <li style="flex: 1;"></li>
+    <li>
+      <%= link_to do %>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to do %>
+      <i class="fa fa-youtube" aria-hidden="true"></i>
+      <% end %>
+    </li>
+    <li><i class="fa fa-phone" aria-hidden="true"></i>(619)392-9068</li>
+    <li><i class="fa fa-envelope" aria-hidden="true"></i>Lewis@EagleMountainDigital.com</li>
+  </ul>
+</header>

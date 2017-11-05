@@ -1,0 +1,210 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+$blue: #00287f;
+$green: #8bcc14;
+$gray: #eeeeee;
+
+body{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header, footer{
+    background: $blue;
+    color: white;
+    .logo{
+        display: flex;
+        align-items: center;
+        h3{
+            padding-left: 1rem;
+        }
+    }
+    .nav-links{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li{
+            padding-left: 2rem;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        &:hover{
+            color: white;
+        }
+    }
+}
+
+header{
+    position: fixed;
+    width: 960px;
+    .header-top{
+        display: flex;
+        padding: 2rem;
+    }
+    .header-bottom{
+        display: flex;
+        background: $green;
+        padding: 1rem 2rem;
+        list-style: none;
+        font-size: 1rem;
+        li{
+            padding-left: 2rem;
+        }
+        i{
+            padding-right: 1rem;
+        }
+    }
+    .logo{
+        flex: 1;
+    }
+    .nav{
+        flex: 4;
+    }
+}
+
+footer{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 15px solid $green;
+    justify-content: center;
+    align-items: center;
+    .logo{
+        padding-bottom: 2rem;
+    }
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    border-bottom: 15px solid $green;
+}
+
+.container{
+    background: $gray;
+    a{
+        color: $blue;
+        &:hover{
+            color: $blue;
+        }
+    }
+}
+.homepage{
+    .row{
+        display: flex;
+        div{
+            padding: 2rem;
+            h2{
+                font: garamond;
+                margin-bottom: 1rem;
+                color: $blue;
+                border-bottom: 1px solid $blue;
+            }
+            h3{
+                display: inline;
+            }
+            p{
+                padding-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.about{
+    padding: 2rem;
+    h1{
+        color: $blue;
+        border-bottom: 1px solid $blue;
+    }   
+    h2{
+        color: $blue;
+        padding-bottom: 1rem;
+    }
+    div{
+        padding: 3rem 0;
+        border-bottom: 1px solid black;
+    }
+}
+
+.features{
+    padding: 2rem;
+    h1{
+        color: $blue;
+        border-bottom: 1px solid $blue;
+    }   
+    h2{
+        color: $blue;
+        padding-bottom: 1rem;
+    }
+    .feature{
+        padding: 3rem 0;
+        border-bottom: 1px solid black;
+        display: flex;
+        .feature-text{
+            flex: 2;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        } 
+        .feature-image{
+            padding: 2rem;
+            flex: 3;    
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.contact{
+    padding: 2rem;
+    h1{
+        color: $blue;
+    }
+    h2{
+        padding-bottom: 1rem;
+    }
+    form{
+        padding: 2rem;
+    }
+    .form-field{
+        padding-bottom: 1rem;
+        margin: 0 auto;
+        width: 60%;
+        display: flex;
+        label{
+            flex: 1;
+        }
+        input{
+            flex: 2;
+        }
+    }
+}
+
+
+
+
+
+

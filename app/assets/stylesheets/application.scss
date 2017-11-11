@@ -13,37 +13,45 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
 
 *{
     padding: 0;
     margin: 0;
 }
 
-$blue: #00287f;
+$blue: #00287f; 
+// rgb(0,40,127)
 $green: #8bcc14;
-$gray: #eeeeee;
+// rgb(139,204,20)
+$gray: rgba(238,238,238, .95);
+$light-blue: #00B5FF;
 
 body{
-    max-width: 960px;
-    margin: 0 auto;
+    width: 100%;
+    font-family: arial;
+    p, ul, li{
+        font-size: 1.5rem;
+    }
+}
+
+// Fixing bootstrap defaults
+a:visited{
+    color: inherit;
+}
+a:hover{
+    background: none;
 }
 
 header, footer{
-    background: $blue;
     color: white;
     .logo{
         display: flex;
         align-items: center;
         h3{
             padding-left: 1rem;
-        }
-    }
-    .nav-links{
-        display: flex;
-        align-items: center;
-        list-style: none;
-        li{
-            padding-left: 2rem;
         }
     }
     a{
@@ -56,23 +64,35 @@ header, footer{
 }
 
 header{
+    background: rgba(0,40,127, .75);
+    z-index: 1000;
     position: fixed;
-    width: 960px;
+    width: 100%;
     .header-top{
+        height: 100px;
         display: flex;
-        padding: 2rem;
+        padding: 1rem;
     }
     .header-bottom{
+        margin-bottom: 0;
         display: flex;
         background: $green;
         padding: 1rem 2rem;
         list-style: none;
-        font-size: 1rem;
+        font-size: 1.25rem;
         li{
             padding-left: 2rem;
         }
         i{
             padding-right: 1rem;
+        }
+    }
+    .nav-links{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li{
+            padding: 0 2rem;
         }
     }
     .logo{
@@ -82,8 +102,38 @@ header{
         flex: 4;
     }
 }
-
+.hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  right:0;
+  line-height:45px;
+  padding:5px 15px 0px 15px;
+  color: white;
+  border:0;
+  font-size:2em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:0px;
+  right:0;
+  padding:7px 15px 0px 15px;
+  color: white;
+  border:0;
+  font-size:3em;
+  line-height:65px;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
 footer{
+    background: $blue;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -93,16 +143,33 @@ footer{
     .logo{
         padding-bottom: 2rem;
     }
+    .footer-nav-links{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li{
+            padding: 0 2rem;
+        }
+    }
 }
 
 .hero{
+    background: url('blue_ridge_mountains');
+    background-attachment: cover;
+    img{
+        width: 80%;
+        height: 80%;
+        max-width: 1280px;
+    }
     display: flex;
     justify-content: center;
     border-bottom: 15px solid $green;
+    overflow: hidden;
 }
 
 .container{
-    background: $gray;
+    padding: 0;
+    width: 100%;
     a{
         color: $blue;
         &:hover{
@@ -110,70 +177,198 @@ footer{
         }
     }
 }
-.homepage{
-    .row{
+
+.about{
+    padding: 3rem 0;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    display: flex;
+    h1, h2, h3{
+        color: $blue;
+    }
+    p{
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    width: 80%;
+    .about-text{
+        flex: 1;
+        padding-right: 2rem;
+    }
+    .blog-latest{
+        flex: 1;
+        padding-left: 2rem;
+        #blog-body{
+            padding-top: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+}
+
+.features{
+    width: 100%;
+    background: url('road');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2rem;
+    h2{
+        color: $light-blue;
+        padding-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .feature{
+        padding: 2rem;
+        color: white;
         display: flex;
-        div{
+        .feature-text{
+            margin: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 2;
             padding: 2rem;
             h2{
-                font: garamond;
-                margin-bottom: 1rem;
-                color: $blue;
-                border-bottom: 1px solid $blue;
-            }
-            h3{
-                display: inline;
+                padding: 2rem 2rem 0 2rem;
+                border-top-left-radius: 2rem;
+                border-top-right-radius: 2rem;
+                background: rgba(50, 50, 50, .7);
             }
             p{
-                padding-bottom: 1rem;
+                padding: 2rem;
+                background: rgba(50, 50, 50, .7);
+                color: white;
+                border-bottom-left-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+            }
+        } 
+        .feature-image{
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 3;    
+            img{
+                min-width: 600px;
+                width: 70%;
+                border-radius: 2rem;
             }
         }
     }
 }
 
-.about{
-    padding: 2rem;
-    h1{
-        color: $blue;
-        border-bottom: 1px solid $blue;
-    }   
-    h2{
-        color: $blue;
-        padding-bottom: 1rem;
+.packages{
+    overflow: hidden;
+    height: 45rem;
+    display: flex;
+    &:hover{
+        cursor: pointer;
     }
-    div{
-        padding: 3rem 0;
-        border-bottom: 1px solid black;
+    #first{
+        .left{
+            min-width: 40rem
+        }
+        .bottom-left{
+            min-width: 25rem;
+        }
+        h2, h1 {
+            color: $blue;
+        }
+        background: #00B5FF;
+        p, li{
+            color: white;
+        }
+        width: 50%;
     }
-}
+    #second{
+        .left{
+            min-width: 40rem
+        }
+        .bottom-left{
+            min-width: 25rem;
+        }
+        h2, h1 {
+            color: $light-blue;
+        }
+        background: $blue;
+        p, li{
+            color: white;
+        }
+        width: 50%;
+    }
 
-.features{
-    padding: 2rem;
-    h1{
-        color: $blue;
-        border-bottom: 1px solid $blue;
-    }   
-    h2{
-        color: $blue;
-        padding-bottom: 1rem;
-    }
-    .feature{
-        padding: 3rem 0;
-        border-bottom: 1px solid black;
+    .packages-container{
+        padding: 2rem;
         display: flex;
-        .feature-text{
+        position: relative;
+        .left{
+            min-width: 250px;
+            padding: 2rem;
+            flex: 1;
+            .top{
+                display: flex;
+                padding-bottom: 2rem;
+                .top-text{
+                    padding-left: 1rem;
+                }
+            }
+            .bottom{
+                display: flex;
+                .bottom-left{
+                    flex: 1;
+                    min-width: 20rem;
+                }
+                .bottom-right{
+                    flex: 1;
+                    span{
+                        color: $green;
+                    }
+                }
+                .bottom-left, .bottom-right{
+                    list-style: none;
+                    #red{
+                        color: red;
+                    }
+                }
+                li{
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+        .left-arrow{
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 93%;
+            opacity: 0;
+            i{
+                font-size: 6rem;
+            }
+        }
+        .right-arrow{
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 2%;
+            opacity: 0;
+            i{
+                font-size: 6rem;
+            }
+        }
+        .right{
+            display:none;
             flex: 2;
             padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        } 
-        .feature-image{
-            padding: 2rem;
-            flex: 3;    
-            img{
-                width: 100%;
+            div{
+                padding-bottom: 2rem;
+                h2{
+                    padding-bottom: 1rem;
+                }
             }
+        }
+        .info{
+            font-style: italic;
+            padding-top: 1rem;
         }
     }
 }
@@ -203,8 +398,240 @@ footer{
     }
 }
 
+.process{
+    width: 100%;
+    background: url('mountain_field');
+    background-size: 100%;
+    h1{
+        text-align: center;
+        color: $blue;
+        padding-top: 2rem;
+    }
+    .process-container{
+        min-height: 30rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div{
+            padding: 5rem 10rem;
+            align-self: center;
+            height: 25rem;
+            flex: 1;
+            background: url('mountain_circle');
+            background-size: 40%;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            &:hover{
+                cursor: pointer;
+            }
+            h2{
+                text-align: center;
+                padding-top: 2rem;
+            }
+            .process-info{
+                font-size: 1.5rem;
+                display: none;
+                width: 50%;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+    }
+}
 
+.portfolio{
+    background: $light-blue;
+    color: white;
+    padding: 4rem;
+    h1{
+        color: white;
+        padding-bottom: 1rem;
+        font-style: italic;
+    }
+    .projects{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .project{
+            min-height: 580px;
+            width: 80%;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .project-text{
+                flex: 1;
+                padding: 3rem;
+                .project-name{
+                    flex: 1;
+                    display: flex;
+                    padding-bottom: 2rem;
+                    img{
+                        width: 100px;
+                    }
+                    #general_issue{
+                        font-family: 'Stardos Stencil', cursive;
+                        color: black;
+                        font-size: 3rem;
+                        padding-left: 1rem;
+                    }
+                    #sunset_landscapes{
+                        font-family: Georgia, serif;
+                        color: rgb(247, 147, 30);
+                        font-size: 3rem;
+                        padding-left: 1rem;
+                    }
+                    #real_turf{
+                        font-family: 'Stardos Stencil', cursive;
+                        color: #91C747;
+                        font-size: 3rem;
+                        padding-left: 1rem;
+                    }
+                    #blocitoff{
+                        color: #FFF200;
+                        font-size: 3rem;
+                        span{
+                            padding-left: .5rem;
+                        }
+                    }
+                }
+            }
+            .project-image{
+                flex: 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width: 70%;
+                    padding-bottom: 1rem;
+                    border-radius: 2rem;
+                }
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
 
+.blog-edit{
+    padding: 12rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .edit-links{
+        display: flex;
+        a{
+            margin: 0 1rem;
+        }
+    }
+}
 
+.blog-form{
+    textarea{
+        width: 800px;
+        height: 400px;
+    }
+    .text-field{
+        width: 300px;
+    }
+}
+.blog-show{
+    width: 60%;
+    padding: 15rem 2rem 2rem 2rem;
+    margin: 0 auto;
+    #blog-body{
+        border-top: 1px solid black;
+        padding-top: 1rem;
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.5rem;
+    }
+}
 
-
+.blog-index{
+    min-height: 1000px;
+    width: 80%;
+    padding: 15rem 2rem 2rem 2rem;
+    margin: 0 auto;
+    .header{
+        h1{
+            color: $blue;
+            padding-bottom: 1rem;
+        }
+        p{
+            padding-bottom: 1rem;
+        }
+        width: 50%;
+    }
+    .table-headers, .blog-table-rows{
+        display: flex;
+    }
+    .table-headers{
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 1rem 0;
+        border-bottom: 1px solid black;
+    }
+    .blog-table-rows{
+        font-size: 1.5rem;
+        border-bottom: 1px solid black;
+        padding: 2rem 0;
+    }
+    .blog-each{
+        font-size: 1rem;
+        font-weight: normal;
+        border-top: 1px solid black;
+    }
+}
+.blog-list-ui{
+    &:first-child{
+        .blog-body-ui{
+            display: block;
+        }
+    }
+    .blog-index-ui:not(:first-child){
+        .blog-body-ui{
+            display: none;
+        }
+    }
+    .blog-index-ui{
+        height: 100%;
+        border-bottom: 1px solid black;
+        padding: 4rem 2rem;
+        &:hover{
+            cursor: pointer;
+        }
+        h2{
+            color: $blue;
+            padding-bottom: 2rem;
+        }
+    }
+}
+.contact-bubble{
+    &:hover{
+        cursor: pointer;
+    }
+    i{
+        padding-right: 1rem;
+        font-size: 3rem;
+    }
+    z-index: 9999999;
+    border: 3px solid $blue;
+    color: $blue;
+    right: 5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 25rem; 
+    position: fixed; 
+    background: $light-blue;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10rem;
+}

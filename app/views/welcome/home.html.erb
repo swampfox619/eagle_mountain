@@ -1,34 +1,8 @@
 <%= render "hero" %>
 <div class="container">
-    <div class="homepage">
-        <div class="row">
-            <div>
-                <h2>About Us</h2>
-                <p>A little about why we started, our mission, and how we help veterans.</p>
-                <%= link_to "Read more", about_path %>
-            </div>
-            <div>
-                <h2>Website Packages</h2>
-                <p>Check out our standard packages that include everything you'd expect in a modern website.</p>
-                <%= link_to "Read more", packages_path %>
-            </div>
-            <div>
-                <h2>Website Features</h2>
-                <p>Take a look at the features that will make your website stand out from your competition.</p>
-                <%= link_to "Read more", features_path %>
-            </div>
-        </div>
-        <div class="row">
-            <div>
-                <h2>Contact Us</h2>
-                <p>A little about why we started, our mission, and how we help veterans.</p>
-                <%= link_to "Read more", about_path %>
-            </div>
-            <div>
-                <h2>Latest Blog</h2>
-                <p>Check out our standard packages that include everything you'd expect in a modern website.</p>
-                <%= link_to "Read more", packages_path %>
-            </div>   
-        </div>
-    </div>
+    <%= render 'about' %>
+    <%= render 'features' %>
+    <%= render 'packages' %>
+    <%= render 'process' %>
+    <%= render 'portfolio' %>
 </div>

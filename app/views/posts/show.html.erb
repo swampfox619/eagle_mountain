@@ -1,0 +1,23 @@
+<div class="blog-show">
+  <p id="notice"><%= notice %></p>
+  <h2 id="blog-title">
+    <%= @post.title %>
+  </h2>
+  <h4>
+    <%= "Published: #{@post.created_at.strftime("%B %e, %Y")}" %></h4>
+  </h4>
+  <div id="blog-body">
+    <%= raw(@post.body) %>
+  </div>
+  <% if current_user %>
+    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary' %> 
+    <%= link_to 'Back', posts_path, class: 'btn btn-primary' %>
+  <% end %>
+  <% if @post.id != @posts.last.id %>
+  <%= link_to 'Next', post_path(@post.id + 1), class: 'btn btn-primary' %>
+  <% end %>
+  <% if @post.id > 1 %>
+  <%= link_to 'Previous', post_path(@post.id - 1), class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Show list of posts', posts_path, class: 'btn btn-primary' %>
+</div>

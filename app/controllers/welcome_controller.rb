@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   def home
+    @posts = Post.all
+    @post = Post.last
   end
 
   def about
@@ -15,6 +17,8 @@ class WelcomeController < ApplicationController
   end
 
   def blog
+    @posts = Post.all
+    @post = Post.last
   end
 
   def contact

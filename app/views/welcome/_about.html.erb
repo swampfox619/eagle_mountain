@@ -1,0 +1,19 @@
+<div class="about">
+    <div class='about-text'>
+        <h1>Your work speaks for itself. <br> We just help spread the word online.</h1>
+        <p>We're a small digital agency located in Boone, NC, that specializes in designing and developing professional, modern, 
+        websites at fair prices.  We exist to fill the gap between large, expensive, digital agencies and small shops who may not have
+        the design and development skills you need.</p>    
+    </div>
+    <div class="blog-latest">
+        <h2>Latest Blog:</h2>
+        <h3><%= @post.title %> | <%= "#{@post.created_at.strftime("%b %e, %Y")}" %></h3>
+        <div id="blog-body">
+            <%= raw(@post.body.truncate(300)) %>   <%= link_to 'read more', posts_path %>
+        </div>
+    </div>
+    <div class="contact-bubble">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+    </div>
+</div>

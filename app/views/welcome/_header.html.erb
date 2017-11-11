@@ -1,15 +1,17 @@
 <header>
   <div class="header-top">
     <div class="logo">
-      <%= image_tag('me_facebook_logo', size: '75x75', id: 'logo-header') %>
+      <%= image_tag('em_star_logo_white', size: '75x75', id: 'logo-header') %>
       <h3>Eagle<br>Mountain<br>Digital</h3>
     </div>
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
     <ul class="nav-links">
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'About', about_path %></li>
-      <li><%= link_to 'Website Packages', packages_path %></li>
-      <li><%= link_to 'Website Features', features_path %></li>
-      <li><%= link_to 'Blog', blog_path %></li>
+      <li><%= link_to 'Packages', packages_path %></li>
+      <li><%= link_to 'Features', features_path %></li>
+      <li><%= link_to 'Blog', posts_path %></li>
       <li><%= link_to 'Contact', contact_path %></li>
     </ul>
   </div>

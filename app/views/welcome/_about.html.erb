@@ -6,7 +6,8 @@
         the design and development skills you need.</p>    
     </div>
     <div class="blog-latest">
-        <% if @post.title != nil %>
+        <% if @post.nil? %>
+        <% else %>
             <h2>Latest Blog:</h2>
             <h3><%= @post.title %> | <%= "#{@post.created_at.strftime("%b %e, %Y")}" %></h3>
             <div id="blog-body">

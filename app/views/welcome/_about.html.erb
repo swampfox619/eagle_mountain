@@ -6,11 +6,13 @@
         the design and development skills you need.</p>    
     </div>
     <div class="blog-latest">
-        <h2>Latest Blog:</h2>
-        <h3><%= @post.title %> | <%= "#{@post.created_at.strftime("%b %e, %Y")}" %></h3>
-        <div id="blog-body">
-            <%= raw(@post.body.truncate(300)) %>   <%= link_to 'read more', posts_path %>
-        </div>
+        <% if @post.title != nil %>
+            <h2>Latest Blog:</h2>
+            <h3><%= @post.title %> | <%= "#{@post.created_at.strftime("%b %e, %Y")}" %></h3>
+            <div id="blog-body">
+                <%= raw(@post.body.truncate(300)) %>   <%= link_to 'read more', posts_path %>
+            </div>
+        <% end %>
     </div>
     <%= link_to contact_path do %>
     <div class="contact-bubble">

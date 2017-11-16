@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <title>Eagle Mountain Digital | Contact Request from <%= @message.name %></title>
+    <style type="text/css">
+        .contact-message{
+            display: flex;
+            min-height: 300px;
+        }
+        .left-margin{
+            padding: 2rem;
+            flex: 1;
+            min-width: 100px;
+            background: #00287f;
+        }
+        .right-margin{
+            padding: 2rem;
+            flex: 4;
+            background: white;
+        }
+        .message-header{
+            padding: 0 2rem;
+            width: 60%;
+        }
+        .message-content{
+            width: 60%;
+            padding: 2rem;
+            font-style: italic;
+            border-bottom: 1px solid #00287f;
+            border-top: 1px solid #00287f;
+        }
+        .message-signature{
+            padding-top: 2rem;
+        }
+        h1, h3{
+            color: #00287f;
+        }
+        @media (max-width: 480px) {
+            .content-message{
+                flex-direction: column;
+            }
+            .left-margin{
+                width: 100%;
+                padding: .5rem;
+                padding-top: 3rem;
+            }
+            .right-margin{
+                width: 100%;
+            }
+            h1{
+                font-size: 24px;
+            }
+            h2{
+                font-size: 20px;
+            }
+            h3{
+                font-size: 16px;
+            }
+            p{
+                font-sie: 12px;
+            }
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="contact-message">
+    <div class="left-margin">
+        <%= image_tag('em_star_logo_white.png', size: '100x100') %>
+    </div>
+    <div class="right-margin">
+        <div class="message-header">
+            <h1>Eagle Mountain Digital</h1>
+            <h2><%= @message.name %>, we got your message, and will reach out to you on:</h2>
+            <h3><strong><%= @message.day_of_week %>, between <%= @message.time_of_day %></strong></h3>
+            <h2>If you'd like to reach us sooner, try giving us a call at (619)392-9068.  We look forward to discussing your website with you!</h2>
+            <h3>You can review your message below:</h3>
+        </div>
+        <div class="message-content">
+            <%= @message.name %> <<%= @message.email %>> wrote:
+            <%= @message.content %>
+        </div>
+        <div class="message-signature">
+            <h2>Best, <br>Lew & The Eagle Mountain Team</h2>
+        </div>
+    </div>
+  </body>
+</html>

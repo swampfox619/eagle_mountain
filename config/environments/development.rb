@@ -12,21 +12,20 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-
-  # Don't care if the mailer can't send.
+  config.action_mailer.asset_host = 'https://eagle-mountain-lewvine.c9users.io/'
   config.action_mailer.raise_delivery_errors = true
-      config.action_mailer.default_url_options = {host: 'https://eagle-mountain-lewvine.c9users.io/'}
-      config.action_mailer.perform_deliveries = true
-      config.action_mailer.delivery_method = :smtp
-      ActionMailer::Base.smtp_settings = {
-        :address        => 'smtp.gmail.com',
-        :port           => '587',
-        :authentication => :plain,
-        :user_name      => ENV['GMAIL_USERNAME'],
-        :password       => ENV['GMAIL_PASSWORD'],
-        :domain         => 'Mydomain.com',
-        :enable_starttls_auto => true
-      }
+  config.action_mailer.default_url_options = {host: 'https://eagle-mountain-lewvine.c9users.io/'}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.gmail.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['GMAIL_USERNAME'],
+    :password       => ENV['GMAIL_PASSWORD'],
+    :domain         => 'Mydomain.com',
+    :enable_starttls_auto => true
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

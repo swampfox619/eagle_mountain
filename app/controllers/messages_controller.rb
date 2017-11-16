@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
         
         if @message.valid?
             MessageMailer.new_message(@message).deliver
+            MessageMailer.contact_response(@message).deliver
             redirect_to contact_path, notice: "Your form was sent."
         else
             flash[:alert] = "An error occurred while delivering this message."
@@ -19,7 +20,7 @@ class MessagesController < ApplicationController
     private
     
         def message_params
-            params.require(:message).permit(:name, :email, :content)
+            params.require(:message).permit(:name, :email, :content, :day_of_week, :time_of_day)
         end
             
 

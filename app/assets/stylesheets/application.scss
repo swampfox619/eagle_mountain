@@ -555,17 +555,22 @@ footer{
 }
 
 .blog-index{
+    background: $light-blue;
     min-height: 1000px;
-    width: 80%;
-    padding: 15rem 2rem 2rem 2rem;
+    width: 100%;
+    padding: 15rem 10rem 10rem 10rem;
     margin: 0 auto;
+    p{
+        font-size: 2rem;
+    }
     .header{
         h1{
             color: $blue;
             padding-bottom: 1rem;
         }
         p{
-            padding-bottom: 1rem;
+            color: white;
+            padding-bottom: 3rem;
         }
         width: 50%;
     }
@@ -590,19 +595,23 @@ footer{
     }
 }
 .blog-list-ui{
+    border: 1px solid black;
+    background: white;    
+    border-radius: 3rem;
     &:first-child{
         .blog-body-ui{
             display: block;
         }
     }
     .blog-index-ui:not(:first-child){
+                    border-top: 1px solid black;
         .blog-body-ui{
             display: none;
         }
     }
     .blog-index-ui{
+        border-radius: 3rem;
         height: 100%;
-        border-bottom: 1px solid black;
         padding: 4rem 2rem;
         &:hover{
             cursor: pointer;
@@ -635,3 +644,57 @@ footer{
     width: 10rem;
     border-radius: 10rem;
 }
+.contact{
+    color: $blue;
+    a{
+        color: $blue;
+        &:hover{
+            color: $blue;
+        }
+    }
+    i{
+        padding-right: 1rem;
+    }
+    padding-top: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: $light-blue;
+    min-height: 800px;
+    .contact-info, .contact-form{
+        padding: 3rem;
+    }
+    h1{
+        color: $blue;
+    }
+    h3{
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+    .name, .email {
+        width: 300px;
+        margin-bottom: 2rem;
+    }
+    textarea{
+        width: 300px;
+        height: 200px;
+    }
+    .time{
+        h3{
+            padding-top: 2rem;
+        }
+        .field{
+            display: flex;
+            padding-right: 20px;
+            padding-bottom: 2rem;
+            select{
+                width: 140px;
+            }
+        }
+        .flex{
+            display: flex;
+        }
+    }
+    
+}
+

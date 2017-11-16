@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111194538) do
+ActiveRecord::Schema.define(version: 20171111230221) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 20171111194538) do
     t.string   "email"
     t.string   "name"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "day_of_week"
+    t.integer  "time_of_day"
   end
 
   create_table "posts", force: :cascade do |t|

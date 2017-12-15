@@ -183,16 +183,16 @@ $(document).on("turbolinks:load", function(){
     };
     
 
-
-    contactExpand();
-    blogShowMore();
-    highlight_arrows();
-    process_transition('#process-1');
-    process_transition('#process-2');
-    process_transition('#process-3');
-    packages_slider();
-    cycle_features();
-    cycle_projects();
-
+    if(window.width <= 479){
+        contactExpand();
+        blogShowMore();
+        highlight_arrows();
+        process_transition('#process-1');
+        process_transition('#process-2');
+        process_transition('#process-3');
+        packages_slider();
+        cycle_features();
+        cycle_projects();
+    }
     
 });

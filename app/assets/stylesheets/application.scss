@@ -248,6 +248,9 @@ footer{
     &:hover{
         cursor: pointer;
     }
+    .mobile-packages-heading{
+        display: none;
+    }
     #first{
         .left{
             min-width: 40rem
@@ -681,4 +684,87 @@ footer{
     }
     
 }
-
+.mobile-features{
+    display: none;
+}
+@media only screen and (max-device-width: 480px) {
+    body{
+        width: 100%;
+    }
+    header{
+        height: 20rem;
+        .header-top{
+            .eagle-mountain{
+                font-size: 4rem;
+            }
+            .logo{
+                img{
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+            display: flex;
+            justify-content: center;
+            height: 20rem;
+        }
+    }
+    .mobile-nav-links{
+        flex: 1;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            padding: 0 5rem;
+        }
+        i{
+            font-size: 8rem;
+        }
+    }
+    .process, .portfolio, .features, .hero, header .header-bottom, header .nav-links, .contact-bubble, footer, .blog-index .header {
+        display: none;
+    }
+    .about{
+        padding-top: 20rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        flex-direction: column;
+        .blog-latest{
+            margin-top: 1rem;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            padding-left: 0;
+        }
+    }
+    .mobile-features{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        h2{
+            color: $light-blue;
+        }
+    }
+    .packages{
+        height: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        width: 80%;
+        .mobile-packages-heading{
+            display: block;
+            color: $blue;
+            padding: 2rem 0;
+        }
+        #first, #second{
+            border-radius: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            height: 100%;
+            .right{
+                display: block;
+            }
+        }
+    }
+    .blog-index{
+        padding-top: 25rem;
+    }
+}

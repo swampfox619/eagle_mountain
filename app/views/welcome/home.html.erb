@@ -1,8 +1,278 @@
 <%= render "hero" %>
 <div class="container">
-    <%= render 'about' %>
-    <%= render 'features' %>
-    <%= render 'packages' %>
-    <%= render 'process' %>
-    <%= render 'portfolio' %>
+    <div class="about">
+        <div class='about-text'>
+            <h1>Your work speaks for itself. <br> We just help spread the word online.</h1>
+            <p>We're a small digital agency located in Boone, NC, that specializes in designing and developing professional, modern, 
+            websites at fair prices.  We exist to fill the gap between large, expensive, digital agencies and small shops who may not have
+            the design and development skills you need.</p>    
+        </div>
+        <div class="blog-latest">
+            <% if @post.nil? %>
+            <% else %>
+                <h2>Latest Blog:</h2>
+                <h3><%= @post.title %> | <%= "#{@post.created_at.strftime("%b %e, %Y")}" %></h3>
+                <div id="blog-body">
+                    <%= raw(@post.body.truncate(300)) %>   <%= link_to 'read more', posts_path %>
+                </div>
+            <% end %>
+        </div>
+        <%= link_to contact_path do %>
+        <div class="contact-bubble">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+        <% end %>
+    </div>
+    <div class="features">
+        <div class="feature" id="feature-1">
+            <div class="feature-image">
+                <%= image_tag('seo') %>
+            </div>
+            <div class="feature-text">
+                <h2>SEO on every page</h2>
+                <p>Proper code and design matters.  Search engines rank websites 
+                coded in industry standard formats higher than poorly coded sites.  
+                From headings, to “alt” captions on photos, we’ll do the work behind 
+                the scenes to make sure your website is given the best shot at a higher 
+                ranking.</p>
+            </div>
+        </div>
+        <div class="feature" id="feature-2">
+            <div class="feature-image">
+                <%= image_tag('design') %>
+            </div>
+            <div class="feature-text">
+                <h2>Truly custom design</h2>
+                <p>We design each of our websites from scratch to meet your unique 
+                business’ needs and your customer’s expectations.  We'll never force
+                you to choose between a pre-made template that may or may not be a 
+                good fit for your vision.</p>
+            </div>
+        </div>
+        <div class="feature" id="feature-3">
+            <div class="feature-image">
+                <%= image_tag('real_turf_gallery') %>
+            </div>
+            <div class="feature-text">
+                <h2>Dynamic features</h2>
+                <p>Dynamic fading and sliding, scrollable and sortable image galleries, and
+                other responsive features ensure your prospective customer has a great first
+                experience with your company.</p>
+            </div>
+        </div>
+        <div class="feature" id="feature-4">
+            <div class="feature-image">
+                <%= image_tag('design') %>
+            </div>
+            <div class="feature-text">
+                <h2>Google analytics tracking</h2>
+                <p>Data drives decision-making.  With analytics built-in, you'll know
+                what pages client's like, how long they stay on your page, and whether
+                your online marketing efforts are actually leading people to your site.</p>
+            </div>
+        </div>
+        <div class="feature" id="feature-5">
+            <div class="feature-image">
+                <%= image_tag('admin_view') %>    
+            </div>
+            <div class="feature-text">
+                <h2>Easily update content</h2>
+                <p>We offer custom CRM packages for our client's who need to update their own
+                content.  Add and update blog posts, testimonials, special offers, pricing, 
+                and gallery images with ease, all without hiring a web management company.</p>
+            </div>
+        </div>
+    </div>
+    <div class="packages" >
+        <div class="packages-container" id="first">
+            <div class="left">
+                <div class="top">
+                    <div>
+                        <%= image_tag('em_star_logo_white', size: '100x100') %>
+                    </div>
+                    <div class="top-text">
+                        <h1>Ultimate</h1>
+                        <h2>Starting at <br>$3999</h2>
+                    </div>
+                    <div class="arrow left-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                </div>
+                <div class="bottom">
+                    <ul class="bottom-left">
+                        <li>Responsive layout</li>
+                        <li>Custom design</li>
+                        <li>SEO on every page</li>
+                        <li>Dynamic features</li>
+                        <li>Google analytics tracking</li>
+                        <li>Easily update content</li>
+                    </ul>
+                    <ul class="bottom-right">
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <h2>Great fit for:</h2>
+                    <p>Businesses that want to be able to update content themselves, but don’t plan on 
+                    selling products online or having a large inventory of products to display.   This 
+                    typically includes contractors, professional services, restaurants, and medical 
+                    practices. </p>
+                </div>
+                <div>
+                    <h2>Have a more complex need?</h2>
+                    <p>Realtors, car dealerships, and businesses selling products online need a more robust inventory 
+                    management system and and client interface.  To identify exactly what your business needs, please 
+                    contact us.</p>
+                </div>
+            </div>
+        </div>
+        <div class="packages-container" id="second">
+            <div class="left">
+                <div class="top">
+                    <div>
+                        <%= image_tag('em_star_logo_white', size: '100x100') %>
+                    </div>
+                    <div class="top-text">
+                        <h1>Bootstrap</h1>
+                        <h2>Starting at <br>$2499</h2>
+                    </div>
+                    <div class="arrow right-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                </div>
+                <div class="bottom">
+                    <ul class="bottom-left">
+                        <li>Responsive layout</li>
+                        <li>Custom design</li>
+                        <li>SEO on every page</li>
+                        <li>Dynamic features</li>
+                        <li>Google analytics tracking</li>
+                        <li>Easily update content</li>
+                    </ul>
+                    <ul class="bottom-right">
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>
+                        <li><span><i class="fa fa-times-circle" id="red" aria-hidden="true"></i></span>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <h2>Great fit for:</h2>
+                    <p>Businesses that want to be able to update content themselves, but don’t plan on 
+                    selling products online or having a large inventory of products to display.   This 
+                    typically includes contractors, professional services, restaurants, and medical 
+                    practices. </p>
+                </div>
+                <div>
+                    <h2>Have a more complex need?</h2>
+                    <p>Realtors, car dealerships, and businesses selling products online need a more robust inventory 
+                    management system and and client interface.  To identify exactly what your business needs, please 
+                    contact us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="process">
+        <h1>Our Process</h1>
+        <div class="process-container">
+            <div id="process-1">
+                <h2>Discovery</h2>
+                <p class="process-info">Finding out the best solution to your online needs, initial consult to contract.</p>
+            </div>
+            <div id="process-2">
+                <h2>Design</h2>
+                <p class="process-info">Incorporating content, branding and customer needs into a modern layout.</p>
+            </div>
+            <div id="process-3">
+                <h2>Launch</h2>
+                <p class="process-info">Hard coding your unique design with all the functionality you need.</p>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio">
+            <div class="projects">
+                <div class="project" id="project-1">
+                    <div class="project-text">
+                        <h1>Featured Work:</h1>
+                        <div class="project-name">
+                            <%= image_tag('general_issue_logo') %>
+                            <h2 id="general_issue">General<br> Issue</h2>
+                        </div>
+                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
+                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
+                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
+                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
+                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
+                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                    </div>
+                    <div class="project-image">
+                        <%= image_tag('general_issue_homepage')%>
+                    </div>
+                </div>
+                <div class="project" id="project-2">
+                    <div class="project-text">
+                        <h1>Featured Work:</h1>
+                        <div class="project-name">
+                            <%= image_tag('sunset_landscapes_logo') %>
+                            <h2 id="sunset_landscapes">Sunset Landscapes</h2>
+                        </div>
+                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
+                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
+                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
+                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
+                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
+                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                    </div>
+                    <div class="project-image">
+                        <%= image_tag('sunset_landscapes_homepage')%>
+                    </div>
+                </div>
+                <div class="project" id="project-3">
+                    <div class="project-text">
+                        <h1>Featured Work:</h1>
+                        <div class="project-name">
+                            <%= image_tag('real_turf_logo', size: '100x100') %>
+                            <h2 id="real_turf">Real<br>Turf</h2>
+                        </div>
+                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
+                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
+                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
+                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
+                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
+                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                    </div>
+                    <div class="project-image">
+                        <%= image_tag('real_turf_homepage')%>
+                    </div>
+                </div>
+                <div class="project" id="project-3">
+                    <div class="project-text">
+                        <h1>Featured Work:</h1>
+                        <div class="project-name">
+                            <div id="blocitoff">
+                                <i class="fa fa-check-square" aria-hidden="true"></i><span>Blocitoff</span>
+                            </div>
+                        </div>
+                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
+                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
+                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
+                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
+                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
+                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                    </div>
+                    <div class="project-image">
+                        <%= image_tag('blocitoff_homepage')%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

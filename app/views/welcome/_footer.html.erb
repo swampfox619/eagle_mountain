@@ -1,13 +1,9 @@
 <footer>
   <div class="logo">
-    <%= image_tag('em_star_logo_white', size: '75x75') %>
-    <h3>Eagle<br>Mountain<br>Digital</h3>
+    <%= image_tag('em_star_logo_white', size: '50x50') %>
   </div>
   <ul class="footer-nav-links">
     <li><%= link_to 'Home', root_path %></li>
-    <li><%= link_to 'About', about_path %></li>
-    <li><%= link_to 'Website Packages', packages_path %></li>
-    <li><%= link_to 'Website Features', features_path %></li>
     <li><%= link_to 'Blog', posts_path %></li>
     <li><%= link_to 'Contact', contact_path %></li>
     <% if current_user  %>

@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
@@ -18,41 +20,41 @@
 
 $(document).on("turbolinks:load", function(){
     
-    $('.cross').hide();
-    $('.hamburger').hide();
+    // $('.cross').hide();
+    // $('.hamburger').hide();
     
-    var navScrollCollapse = function(){
-        $('.header-bottom').delay(5000).slideUp(1000);
-        $('.nav-links').delay(5000).hide(1000);
-        $('#logo-header').delay(5000).hide(1000);
-        $('header h3').delay(5000).html('Eagle Mountain Digital');
-        $('.hamburger').delay(5000).show(1000);
-        $('.cross').delay(5000).hide(1000);
-    };
+    // var navScrollCollapse = function(){
+    //     $('.header-bottom').delay(5000).slideUp(1000);
+    //     $('.nav-links').delay(5000).hide(1000);
+    //     $('#logo-header').delay(5000).hide(1000);
+    //     $('header h3').delay(5000).html('Eagle Mountain Digital');
+    //     $('.hamburger').delay(5000).show(1000);
+    //     $('.cross').delay(5000).hide(1000);
+    // };
 
     
-    var navExpand = function(){
-        $( ".hamburger" ).click(function() {
-            $('.header-bottom').slideDown(1000);
-            $('.nav-links').show(1000);
-            $('#logo-header').show(1000);
-            $('.header-bottom').slideDown(1000);
-            $('.cross').delay(500).show(500);
-            $('.hamburger').hide(500);
-        });
-    };
+    // var navExpand = function(){
+    //     $( ".hamburger" ).click(function() {
+    //         $('.header-bottom').slideDown(1000);
+    //         $('.nav-links').show(1000);
+    //         $('#logo-header').show(1000);
+    //         $('.header-bottom').slideDown(1000);
+    //         $('.cross').delay(500).show(500);
+    //         $('.hamburger').hide(500);
+    //     });
+    // };
     
     
-    var navShrink = function(){
-        $('.cross').click(function() {
-            $('.header-bottom').slideUp(1000);
-            $('.nav-links').hide(1000);
-            $('#logo-header').hide(1000);
-            $('header h3').html('Eagle Mountain Digital');
-            $('.hamburger').show(1000);
-            $('.cross').hide(1000);
-        });
-    };    
+    // var navShrink = function(){
+    //     $('.cross').click(function() {
+    //         $('.header-bottom').slideUp(1000);
+    //         $('.nav-links').hide(1000);
+    //         $('#logo-header').hide(1000);
+    //         $('header h3').html('Eagle Mountain Digital');
+    //         $('.hamburger').show(1000);
+    //         $('.cross').hide(1000);
+    //     });
+    // };    
     
     var features = $('div[id^="feature-"]').hide();
     var projects = $('div[id^="project-"]').hide();
@@ -179,12 +181,11 @@ $(document).on("turbolinks:load", function(){
             .css("transition", "transform, 2s")
         });
     };
-        
-    contactExpand()
-    blogShowMore()
-    navScrollCollapse();
-    navExpand();
-    navShrink();
+    
+
+
+    contactExpand();
+    blogShowMore();
     highlight_arrows();
     process_transition('#process-1');
     process_transition('#process-2');

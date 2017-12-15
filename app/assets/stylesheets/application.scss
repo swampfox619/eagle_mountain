@@ -29,6 +29,10 @@ $green: #8bcc14;
 $gray: rgba(238,238,238, .95);
 $light-blue: #00B5FF;
 
+.eagle-mountain{
+    font-family: 'Times New Roman';
+}
+
 body{
     width: 100%;
     font-family: arial;
@@ -64,7 +68,7 @@ header, footer{
 }
 
 header{
-    background: rgba(0,40,127, .75);
+    background: rgba(0,40,127, .85);
     z-index: 1000;
     position: fixed;
     width: 100%;
@@ -72,6 +76,13 @@ header{
         height: 100px;
         display: flex;
         padding: 1rem;
+        .logo{
+            display: flex;
+            align-items: center;
+            h3{
+                margin-top: 0;
+            }
+        }
     }
     .header-bottom{
         margin-bottom: 0;
@@ -102,36 +113,7 @@ header{
         flex: 4;
     }
 }
-.hamburger{
-  background:none;
-  position:absolute;
-  top:0;
-  right:0;
-  line-height:45px;
-  padding:5px 15px 0px 15px;
-  color: white;
-  border:0;
-  font-size:2em;
-  font-weight:bold;
-  cursor:pointer;
-  outline:none;
-  z-index:10000000000000;
-}
-.cross{
-  background:none;
-  position:absolute;
-  top:0px;
-  right:0;
-  padding:7px 15px 0px 15px;
-  color: white;
-  border:0;
-  font-size:3em;
-  line-height:65px;
-  font-weight:bold;
-  cursor:pointer;
-  outline:none;
-  z-index:10000000000000;
-}
+
 footer{
     background: $blue;
     padding: 2rem;
@@ -178,6 +160,7 @@ footer{
     }
 }
 
+
 .about{
     padding: 3rem 0;
     margin: 0 auto;
@@ -206,6 +189,7 @@ footer{
 }
 
 .features{
+    min-height: 600px;
     width: 100%;
     background: url('road');
     background-size: cover;

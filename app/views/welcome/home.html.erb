@@ -2,7 +2,7 @@
 <div class="container">
     <div class="about">
         <div class='about-text'>
-            <h1>Your work speaks for itself. <br> We just help spread the word online.</h1>
+            <h1 class="featuresLink">Your work speaks for itself. <br> We just help spread the word online.</h1>
             <p>We're a small digital agency located in Boone, NC, that specializes in designing and developing professional, modern, 
             websites at fair prices.  We exist to fill the gap between large, expensive, digital agencies and small shops who may not have
             the design and development skills you need.</p>    
@@ -18,10 +18,10 @@
             <% end %>
         </div>
         <%= link_to contact_path do %>
-        <div class="contact-bubble">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-        </div>
+            <div class="contact-bubble">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
         <% end %>
     </div>
     <div class="features">
@@ -52,7 +52,7 @@
         </div>
         <div class="feature" id="feature-3">
             <div class="feature-image">
-                <%= image_tag('real_turf_gallery') %>
+                <%= image_tag('admin_view') %>
             </div>
             <div class="feature-text">
                 <h2>Dynamic features</h2>
@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    <div class="packages" >
+    <div class="packages">
         <div class="packages-container" id="first">
             <div class="left">
                 <div class="top">
@@ -206,12 +206,11 @@
                             <%= image_tag('general_issue_logo') %>
                             <h2 id="general_issue">General<br> Issue</h2>
                         </div>
-                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
-                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
-                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
-                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
-                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
-                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                        <p>General Issue needed a informational / brochure site containing 
+                        basic information about their company, including services and about pages,
+                        a blog, and contact pages.  The main page as well as the blog features social 
+                        integration so visitors can like and share each blog post to maximize the reach
+                        of General Issue's content.</p>
                     </div>
                     <div class="project-image">
                         <%= image_tag('general_issue_homepage')%>
@@ -224,12 +223,11 @@
                             <%= image_tag('sunset_landscapes_logo') %>
                             <h2 id="sunset_landscapes">Sunset Landscapes</h2>
                         </div>
-                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
-                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
-                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
-                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
-                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
-                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                        <p>Sunset Landscapes needed an image intensive site to highlight their work, 
+                        as well as a custom administrative interface to easily update content such as
+                        images, projects, product specials, and more.  All of this is accessible through
+                        as easy to use interface that allows for easy updates, but without running the risk
+                        of accidentally changing the "deeper code" of the site.</p>
                     </div>
                     <div class="project-image">
                         <%= image_tag('sunset_landscapes_homepage')%>
@@ -242,12 +240,12 @@
                             <%= image_tag('real_turf_logo', size: '100x100') %>
                             <h2 id="real_turf">Real<br>Turf</h2>
                         </div>
-                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
-                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
-                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
-                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
-                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
-                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                        <p>RealTurf needed a bit more than a simple informational site, and wanted a digital space
+                        that would help sell their services to customers before that first contact was ever made.  We
+                        incorporated "highlight project" sections throughout the sites that highlight before and after pictures,
+                        user testimonials, and allowed users to click to find out more.  Each "highlight project" was a self-contained
+                        gallery that walked users through the project from start to finish, clearly demonstrating RealTurf's target
+                        audience and allowing users to self-select for their services prior to ever initiating contact.</p>
                     </div>
                     <div class="project-image">
                         <%= image_tag('real_turf_homepage')%>
@@ -261,12 +259,9 @@
                                 <i class="fa fa-check-square" aria-hidden="true"></i><span>Blocitoff</span>
                             </div>
                         </div>
-                        <p>Curabitur vitae risus posuere, accumsan sem a, tristique diam. 
-                        Maecenas lobortis tortor et vestibulum aliquam. Suspendisse erat nisi, 
-                        maximus sit amet velit id, tempor hendrerit dolor. Donec hendrerit magna 
-                        in efficitur euismod. Nam auctor enim sed porttitor vestibulum. Aliquam ac 
-                        sodales arcu. Cras vitae metus tincidunt, laoreet urna id, tristique metus. 
-                        Maecenas vitae tristique enim. Proin id purus turpis.</p>
+                        <p>Blocitoff is a simple web-application we built as a way of highlighting the power of modern
+                        web technologies.  It has a user sign up / sign in feature, and is a to do application that
+                        features instantaneous updating without the need for page reloads.</p>
                     </div>
                     <div class="project-image">
                         <%= image_tag('blocitoff_homepage')%>

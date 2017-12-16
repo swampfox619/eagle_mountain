@@ -688,6 +688,22 @@ footer{
     display: none;
 }
 
+// DEVISE VIEWS:
+
+.user-form{
+    padding: 2rem;
+    padding-top: 15rem;
+    width: 33%;
+    margin: 0 auto;
+    min-height: 850px;
+    h2{
+        color: $light-blue;
+        border-bottom: 1px solid $light-blue;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
 @media only screen and (max-device-width: 480px) {
     body{
         width: 100%;

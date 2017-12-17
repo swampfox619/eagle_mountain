@@ -96,10 +96,8 @@ $(document).on("turbolinks:load", function(){
             var secondWidth = $('#second').width();
             
             if (firstWidth <= secondWidth + 1){
-                console.log('condition 1')
                 slide_package('#first', '#second');
             }else{
-                console.log('condition 1')
                 slide_package('#second', '#first');
             };
         }); 
@@ -110,11 +108,11 @@ $(document).on("turbolinks:load", function(){
         $(second).find('.right').hide();
         $(first).find('.arrow').hide();
         $(first).css({
-            width      : '80%',
+            width      : '70%',
             transition : 'width, 1s'
         });
         $(second).css({
-            width      : '20%',
+            width      : '30%',
             transition : 'width, 1s'
         });
     };

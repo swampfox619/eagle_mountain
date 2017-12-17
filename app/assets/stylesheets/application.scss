@@ -40,6 +40,9 @@ body{
     p, ul, li{
         font-size: 1.5rem;
     }
+    h1, h2, h3{
+        font-family: 'Times New Roman', serif;
+    }
 }
 
 // Fixing bootstrap defaults
@@ -146,7 +149,6 @@ footer{
     border-bottom: 15px solid $green;
     overflow: hidden;
     h2{
-        font-family: 'Times New Roman';
         position: relative;
         left: -20%;
         top: 60%;
@@ -167,9 +169,10 @@ footer{
 
 
 .about{
-    padding: 3rem 0;
+    padding: 3rem 2rem;
     margin: 0 auto;
     margin-bottom: 10rem;
+    width: 100%;
     display: flex;
     h1, h2, h3{
         color: $blue;
@@ -178,7 +181,6 @@ footer{
         font-size: 2rem;
         line-height: 3rem;
     }
-    width: 80%;
     .about-text{
         flex: 1;
         padding-right: 2rem;
@@ -352,7 +354,7 @@ footer{
             flex: 2;
             padding: 2rem;
             div{
-                padding-bottom: 2rem;
+                // padding-bottom: 2rem;
                 h2{
                     padding-bottom: 1rem;
                 }
@@ -398,6 +400,7 @@ footer{
         text-align: center;
         color: $blue;
         padding-top: 2rem;
+        margin-top: 0;
     }
     .process-container{
         min-height: 30rem;
@@ -406,12 +409,12 @@ footer{
         align-items: center;
         justify-content: center;
         div{
-            padding: 5rem 10rem;
+            padding: 1rem 10rem;
             align-self: center;
             height: 25rem;
             flex: 1;
             background: url('mountain_circle');
-            background-size: 40%;
+            background-size: 50%;
             background-repeat: no-repeat;
             background-position: center;
             color: white;
@@ -423,9 +426,8 @@ footer{
                 padding-top: 2rem;
             }
             .process-info{
-                font-size: 1.5rem;
                 display: none;
-                width: 50%;
+                width: 80%;
                 margin: 0 auto;
                 text-align: center;
             }
@@ -440,7 +442,6 @@ footer{
     h1{
         color: white;
         padding-bottom: 1rem;
-        font-style: italic;
     }
     .projects{
         width: 100%;
@@ -449,45 +450,39 @@ footer{
         justify-content: center;
         .project{
             min-height: 580px;
-            width: 80%;
+            width: 100%;
             padding: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             .project-text{
-                flex: 1;
-                padding: 3rem;
+                flex: 2;
+                padding: 2rem;
                 .project-name{
-                    flex: 1;
                     display: flex;
                     padding-bottom: 2rem;
                     img{
                         width: 100px;
                     }
-                    #general_issue{
-                        font-family: 'Stardos Stencil', cursive;
-                        color: black;
+                    #general_issue, #sunset_landscapes, #real_turf, #blocitoff {
                         font-size: 3rem;
                         padding-left: 1rem;
                     }
+                    #general_issue{
+                        font-family: 'Stardos Stencil', serif;
+                        color: black;
+                     }
                     #sunset_landscapes{
                         font-family: Georgia, serif;
                         color: rgb(247, 147, 30);
-                        font-size: 3rem;
-                        padding-left: 1rem;
                     }
                     #real_turf{
-                        font-family: 'Stardos Stencil', cursive;
+                        font-family: serif;
                         color: #91C747;
-                        font-size: 3rem;
-                        padding-left: 1rem;
                     }
                     #blocitoff{
+                        font-family: serif;
                         color: #FFF200;
-                        font-size: 3rem;
-                        span{
-                            padding-left: .5rem;
-                        }
                     }
                 }
             }
@@ -497,13 +492,9 @@ footer{
                 align-items: center;
                 justify-content: center;
                 img{
-                    width: 70%;
-                    padding-bottom: 1rem;
+                    width: 90%;
                     border-radius: 2rem;
                 }
-            }
-            &:hover{
-                cursor: pointer;
             }
         }
     }

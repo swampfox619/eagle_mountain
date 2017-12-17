@@ -5,21 +5,26 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @meta_title = "Eagle Mountain Blog"
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @meta_title = @post.meta_title
+    @meta_description = @post.meta_description
     @posts = Post.all
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @meta_title = "Blog | New"
   end
 
   # GET /posts/1/edit
   def edit
+    @meta_title = "Blog | Edit"
   end
 
   # POST /posts
@@ -70,6 +75,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :meta_title, :meta_description, :permalink)
     end
 end

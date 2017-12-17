@@ -9,7 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'UA-109774674-1');
   </script>
-  <title>Eagle Mountain Digital</title>
+  <title><%= @meta_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>

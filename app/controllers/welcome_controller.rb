@@ -2,18 +2,7 @@ class WelcomeController < ApplicationController
   def home
     @posts = Post.all
     @post = Post.last
-  end
-
-  def about
-  end
-
-  def packages
-  end
-
-  def features
-  end
-
-  def portfolio
+    @meta_title = "Eagle Mountain Digital"
   end
 
   def blog
@@ -21,6 +10,4 @@ class WelcomeController < ApplicationController
     @post = Post.last
   end
 
-  def contact
-  end
 end

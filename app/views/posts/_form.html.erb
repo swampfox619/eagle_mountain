@@ -19,6 +19,18 @@
   </div>
 
   <div class="form-group">
+    <%= f.input :meta_title, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.input :meta_description, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.input :permalink, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
   </div>
 

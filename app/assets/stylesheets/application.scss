@@ -34,7 +34,8 @@ $light-blue: #00B5FF;
 }
 
 body{
-    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
     font-family: arial;
     p, ul, li{
         font-size: 1.5rem;
@@ -71,6 +72,7 @@ header{
     background: rgba(0,40,127, .85);
     z-index: 1000;
     position: fixed;
+    max-width: 1200px;
     width: 100%;
     .header-top{
         height: 100px;
@@ -136,17 +138,20 @@ footer{
 }
 
 .hero{
-    background: url('blue_ridge_mountains');
-    background-attachment: cover;
-    img{
-        width: 80%;
-        height: 80%;
-        max-width: 1280px;
-    }
+    background: url('hero_background');
+    background-size: cover;
+    height: 640px;
     display: flex;
     justify-content: center;
     border-bottom: 15px solid $green;
     overflow: hidden;
+    h2{
+        font-family: 'Times New Roman';
+        position: relative;
+        left: -20%;
+        top: 60%;
+        color: $light-blue;
+    }
 }
 
 .container{

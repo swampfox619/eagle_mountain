@@ -11,12 +11,12 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require social-share-button
 //= require_tree .
 
-$(document).on("turbolinks:load", function(){
+$(document).ready(function(){
     
     var features = $('div[id^="feature-"]').hide();
     var projects = $('div[id^="project-"]').hide();

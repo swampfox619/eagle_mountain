@@ -1,8 +1,18 @@
+<% content_for :head do %>
+    <%= tag :meta, property: "fb:app_id",       content: 537088133324977 %>
+    <%= tag :meta, property: "og:url",         content: "http://www.eaglemountaindigital.com/#{@post.permalink}" %>
+    <%= tag :meta, property: "og:type",        content: "article" %>
+    <%= tag :meta, property: "og:title",     content: "#{@post.title}" %>
+    <%= tag :meta, property: "og:description",  content: "#{@post.meta_description}" %>
+    <%= tag :meta, property: "og:image",       content: "http://www.eaglemountaindigital.com/assets/em_star_logo.png" %>
+<% end %>
 <div class="blog-index">
   <div class="blog">
     <div class="blog-latest">
       <h1><%= @post.title %></h1>
       <h3>Author: Lew Vine | <%= @post.created_at.strftime("%B %e, %Y") %></h3>
+      <!-- Facebook Like and Share Button-->
+      <div class="fb-like" data-href="http://www.eaglemountaindigital.com/<%= @post.permalink.to_s %>" data-width="50" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
       <div><%= raw(@post.body) %></div>
     </div>
     <div class="blog-list">

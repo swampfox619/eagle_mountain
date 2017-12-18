@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
+@import "social-share-button";
 
 *{
     padding: 0;
@@ -32,7 +33,13 @@ $light-blue: #00B5FF;
 .eagle-mountain{
     font-family: 'Times New Roman';
 }
-
+.social-share-button {
+  .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+  }
+}
 body{
     margin: 0 auto;
     max-width: 1200px;
@@ -574,6 +581,7 @@ footer{
         }
     }
 }
+
 .contact-bubble{
     &:hover{
         cursor: pointer;

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Facebook Open Graph Properties -->
+  <%= yield :head %>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109774674-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,8 +18,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'welcome/header' %>
-<%= yield %>
-<%= render 'welcome/footer' %>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=537088133324977';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+  <%= render 'welcome/header' %>
+  <%= yield %>
+  <%= render 'welcome/footer' %>
 </body>
 </html>

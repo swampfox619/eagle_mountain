@@ -19,12 +19,10 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @meta_title = "Blog | New"
   end
 
   # GET /posts/1/edit
   def edit
-    @meta_title = "Blog | Edit"
   end
 
   # POST /posts

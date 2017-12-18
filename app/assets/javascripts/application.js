@@ -117,12 +117,6 @@ $(document).on("turbolinks:load", function(){
         });
     };
     
-    var blogShowMore = function(){
-        $('.blog-index-ui').on("click", function(){
-            $(this).find('.blog-body-ui').slideToggle(1000);
-        })
-    };
-    
     var contactExpand = function(){
         $('.contact-bubble').css("transform", "scale(1.25)")
             .css("transition", "transform, .5s")
@@ -145,7 +139,6 @@ $(document).on("turbolinks:load", function(){
 
     if($(window).width() >= 479){
         contactExpand();
-        blogShowMore();
         highlight_arrows();
         process_transition('#process-1');
         process_transition('#process-2');

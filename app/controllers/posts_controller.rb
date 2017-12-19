@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @meta_description = @post.meta_description
     @posts = Post.order("created_at DESC").to_a
     @posts.delete(@post)
+    @comment = Comment.new(:post => @post)
   end
 
   # GET /posts/new

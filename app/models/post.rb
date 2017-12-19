@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
     extend FriendlyId
+    has_many :comments, :dependent => :destroy
     
     validates :title, :body, :meta_title, :meta_description, :permalink, presence: true
     validates :title, :body, :meta_title, :meta_description, :permalink, uniqueness: true

@@ -14,6 +14,9 @@
       <!-- Facebook Like and Share Button-->
       <div class="fb-like" data-href="http://www.eaglemountaindigital.com/<%= @post.permalink.to_s %>" data-width="50" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
       <div><%= raw(@post.body) %></div>
+      <%= render 'comments/form', comment: Comment.new, post: @post %>
+      <h3 style="padding-left: 4rem;">All Comments:</h3>
+      <%= render @post.comments %>
     </div>
     <div class="blog-list">
       <div class="header">

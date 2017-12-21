@@ -15,13 +15,23 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: 'http://www.eaglemountaindigital.com/'}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :address        => 'smtp.gmail.com',
+  #   :port           => '587',
+  #   :authentication => :plain,
+  #   :user_name      => ENV['GMAIL_USERNAME'],
+  #   :password       => ENV['GMAIL_PASSWORD'],
+  #   :domain         => 'Mydomain.com',
+  #   :enable_starttls_auto => true
+  # }
+
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.com',
+    :address        => 'smtp.office365.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['GMAIL_USERNAME'],
-    :password       => ENV['GMAIL_PASSWORD'],
-    :domain         => 'Mydomain.com',
+    :user_name      => ENV['OUTLOOK_USERNAME'],
+    :password       => ENV['OUTLOOK_PASSWORD'],
+    :domain         => '',
     :enable_starttls_auto => true
   }
 

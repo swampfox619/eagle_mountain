@@ -1,77 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+<% content_for :head do %>
     <title>Eagle Mountain Digital | Contact Request from <%= @message.name %></title>
-    <style type="text/css">
-        .contact-message{
-            display: flex;
-            min-height: 300px;
-        }
-        .left-margin{
-            padding: 2rem;
-            flex: 1;
-            min-width: 100px;
-            background: #00287f;
-        }
-        .right-margin{
-            padding: 2rem;
-            flex: 4;
-            background: white;
-        }
-        .message-header{
-            border-bottom: 1px solid #00287f;
-        }
-        .message-content{
-            padding: 2rem;
-            font-style: italic;
-            border-bottom: 1px solid #00287f;
-        }
-        h1, h2, h3{
-            color: #00287f;
-        }
-        @media (max-width: 480px) {
-            .content-message{
-                flex-direction: column;
-            }
-            .left-margin{
-                width: 100%;
-                padding: .5rem;
-                padding-top: 3rem;
-            }
-            .right-margin{
-                width: 100%;
-            }
-            h1{
-                font-size: 24px;
-            }
-            h2{
-                font-size: 20px;
-            }
-            h3{
-                font-size: 16px;
-            }
-            p{
-                font-size: 12px;
-            }
-        }
-    </style>
-  </head>
-  <body>
-    <div class="contact-message">
-    <div class="left-margin">
-        <%= image_tag('em_star_logo_white.png', size: '100x100') %>
+<% end %>
+<div class="contact-message">
+<div class="left-margin">
+    <%= image_tag('em_star_logo_white.png', size: '100x100') %>
+</div>
+<div class="right-margin">
+    <div class="message-header">
+        <h1>Eagle Mountain Digital</h1>
+        <h2>You've received a new form from <%= @message.name %>. They'd like you to call them on <%= @message.day_of_week %> @ <%= @message.time_of_day %></h2>
+        <h3><%= @message.name %>'s message is below:</h3>
     </div>
-    <div class="right-margin">
-        <div class="message-header">
-            <h1>Eagle Mountain Digital</h1>
-            <h2>You've received a new form from <%= @message.name %>. They'd like you to call them on <%= @message.day_of_week %> @ <%= @message.time_of_day %></h2>
-            <h3><%= @message.name %>'s message is below:</h3>
-        </div>
-        <div class="message-content">
-            <%= @message.name %> <<%= @message.email %>> wrote:
-            <%= @message.content %>
-        </div>
+    <div class="message-content">
+        <%= @message.name %> <<%= @message.email %>> wrote:
+        <%= @message.content %>
     </div>
-  </body>
-</html>
+</div>
+

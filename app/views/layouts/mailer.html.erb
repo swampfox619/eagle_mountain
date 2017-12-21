@@ -1,4 +1,67 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css">
+        .contact-message{
+            display: flex;
+            min-height: 300px;
+        }
+        .left-margin{
+            padding: 2rem;
+            flex: 1;
+            min-width: 100px;
+            background: #00287f;
+        }
+        .right-margin{
+            padding: 2rem;
+            flex: 4;
+            background: white;
+        }
+        .message-header{
+            padding: 0 2rem;
+            width: 60%;
+        }
+        .message-content{
+            width: 60%;
+            padding: 2rem;
+            font-style: italic;
+            border-bottom: 1px solid #00287f;
+            border-top: 1px solid #00287f;
+        }
+        .message-signature{
+            padding-top: 2rem;
+        }
+        h1, h3{
+            color: #00287f;
+        }
+        @media (max-width: 480px) {
+            .content-message{
+                flex-direction: column;
+            }
+            .left-margin{
+                width: 100%;
+                padding: .5rem;
+                padding-top: 3rem;
+            }
+            .right-margin{
+                width: 100%;
+            }
+            h1{
+                font-size: 24px;
+            }
+            h2{
+                font-size: 20px;
+            }
+            h3{
+                font-size: 16px;
+            }
+            p{
+                font-sie: 12px;
+            }
+        }
+    </style>
+  </head>
   <body>
     <%= yield %>
   </body>

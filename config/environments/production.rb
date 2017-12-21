@@ -28,7 +28,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.office365.com',
     :port           => '587',
-    :authentication => :plain,
+    :authentication => :login,
     :user_name      => ENV['OUTLOOK_USERNAME'],
     :password       => ENV['OUTLOOK_PASSWORD'],
     :domain         => '',

@@ -8,8 +8,8 @@ class MessagesController < ApplicationController
         @message = Message.new(message_params)
         
         if @message.valid?
-            MessageMailer.new_message(@message).deliver
-            MessageMailer.contact_response(@message).deliver
+            MessageMailer.new_message(@message).deliver_now
+            MessageMailer.contact_response(@message).deliver_now
             redirect_to contact_path, notice: "Your form was sent."
         else
             flash[:alert] = "An error occurred while delivering this message."

@@ -31,7 +31,7 @@ Rails.application.configure do
     :authentication => :login,
     :user_name      => ENV['OUTLOOK_USERNAME'],
     :password       => ENV['OUTLOOK_PASSWORD'],
-    :domain         => '',
+    :domain         => 'eaglemountaindigital.com',
     :enable_starttls_auto => true
   }
 

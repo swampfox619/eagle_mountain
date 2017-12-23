@@ -1,35 +1,21 @@
 Rails.application.configure do
+  # Settings specified here will take precedence over those in config/application.rb.
 
+  # In the development environment your application's code is reloaded on
+  # every request. This slows down response time but is perfect for development
+  # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+
+  # Do not eager load code on boot.
   config.eager_load = false
+
+  # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-  config.action_mailer.asset_host = 'eagle-mountain-lewvine.c9users.io:8080/'
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = {host: 'eagle-mountain-lewvine.c9users.io:8080/'}
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
-  
-  ActionMailer::Base.smtp_settings = {
-    :address              => 'smtp.office365.com',
-    :port                 => 587,
-    :authentication       => :login,
-    :user_name            => ENV['OUTLOOK_USERNAME'],
-    :password             => ENV['OUTLOOK_PASSWORD'],
-    :domain               => 'eaglemountaindigital.com',
-    :enable_starttls_auto => true,
-  }
-  
-  # ActionMailer::Base.smtp_settings = {
-  #   :address        => 'smtp.gmail.com',
-  #   :port           => '587',
-  #   :authentication => :plain,
-  #   :user_name      => ENV['GMAIL_USERNAME'],
-  #   :password       => ENV['GMAIL_PASSWORD'],
-  #   :domain         => 'Mydomain.com',
-  #   :enable_starttls_auto => true
-  # }
-  
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -52,4 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  config.action_mailer.default_url_options = { host: 'localhost' }
+  
 end

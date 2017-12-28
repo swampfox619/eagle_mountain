@@ -8,8 +8,8 @@ Rails.application.initialize!
     :address              => 'smtp.sendgrid.net',
     :port                 => '587',
     :authentication       => :plain,
-    :user_name            => 'lewis@eaglemountaindigital.com',
-    :password             => 'LDVine78!!',
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
     :domain               => 'eaglemountaindigital.com',
     :enable_starttls_auto => true
   }
